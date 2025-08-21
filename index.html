@@ -7,6 +7,23 @@
   <title>electrothrive2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+     /* Use Oswald font and define the theme's iconic pink color */
+        .squid-pink {
+            --tw-ring-color: #E80F88;
+            background-color: #E80F88;
+        }
+        .ring-squid-pink {
+             --tw-ring-color: #E80F88;
+        }
+        .border-squid-pink {
+            border-color: #E80F88;
+        }
+        .text-squid-pink {
+            color: #E80F88;
+        }
+        .fill-squid-pink {
+            fill: #E80F88;
+        }
     /* Custom underline hover effect */
     .nav-link {
       position: relative;
@@ -33,7 +50,11 @@
 <body class="m-0 p-0">
 <section>
   <!-- Hero Section with Background Image -->
-  <section id="home" class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('images/home.png');">
+ <section id="home" 
+  class="relative min-h-screen overflow-hidden
+         before:absolute before:inset-0 
+         before:bg-[url('images/home.png')] before:bg-cover before:bg-center 
+         before:blur-sm before:-z-10">
 
     <!-- Glassy Navbar -->
     <nav class="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-black/30 shadow-md">
@@ -41,7 +62,7 @@
 
         <!-- Logo -->
         <div class="text-white text-2xl font-bold tracking-wider drop-shadow-md">
-          <img class="w-16 xs:w-20 sm:w-28" src="images/ecltrothrive-cutout.png" alt="Electro Thrive Logo" />
+          <img class="w-14 xs:w-16 sm:w-20 md:w-28" src="images/ecltrothrive-cutout.png" alt="Electro Thrive Logo" />
         </div>
 
         <!-- Desktop Navigation -->
@@ -49,7 +70,6 @@
           <li><a href="#home" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">Home</a></li>
           <li><a href="#about" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">About</a></li>
           <li><a href="#events" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">Events</a></li>
-          <li><a href="#departments" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">Departments</a></li>
           <li><a href="#coordinators" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">Co-ordinators</a></li>
           <li><a href="#contact" class="nav-link hover:text-pink-400 transition text-sm lg:text-base">Contact</a></li>
 
@@ -74,11 +94,10 @@
       </div>
 
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="md:hidden hidden flex-col bg-black bg-opacity-90 text-white px-4 py-3 space-y-3">
+      <div id="mobile-menu" class="md:hidden hidden flex-col bg-black bg-opacity-90 text-white px-4 py-3 space-y-3 text-sm">
         <a href="#home" class="block nav-link py-1">Home</a>
         <a href="#about" class="block nav-link py-1">About</a>
         <a href="#events" class="block nav-link py-1">Events</a>
-        <a href="#departments" class="block nav-link py-1">Departments</a>
         <a href="#coordinators" class="block nav-link py-1">Co-ordinators</a>
         <a href="#contact" class="block nav-link py-1">Contact</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header"
@@ -89,41 +108,44 @@
     </nav>
 
     <!-- College Banner at Top -->
-    <div class="w-full flex justify-center pt-12 xs:pt-16 sm:pt-20">
-      <div class="text-center px-2">
-        <img src="images/college logo.png" alt="College Banner" class="mx-auto mb-1 xs:mb-2 sm:mb-4 w-full xs:w-16 sm:h-80">
-        <h1 class="text-white  xs:text-sm sm:text-lg md:text-2xl lg:text-4xl -mt-2 xs:-mt-10 sm:-mt-34 text-2xl font-semibold drop-shadow-[0_0_10px_#ff007f] px-2">
-          Electronics and Communication Engineering Department Presents
-        </h1>
-      </div>
-    </div>
-
-    <!-- Hero Content with Video - Centered -->
-    <div class="min-h-screen flex flex-col items-center justify-center -mt-64 xs:-mt-32 sm:-mt-40 md:-mt-56 px-3 xs:px-4 pt-2 xs:pt-4 sm:pt-8">
-
-      <!-- Video Box - Centered with landscape optimization -->
-      <div class="w-full max-w-[320px] xs:max-w-sm sm:max-w-lg md:max-w-3xl relative px-2 sm:px-4 landscape:max-w-lg landscape:md:max-w-3xl">
-  <div class="w-full aspect-video">
-    <video autoplay muted loop playsinline
-      class="rounded-xl shadow-lg w-full h-full object-cover mix-blend-screen opacity-100 z-0">
-      <source src="videos/TITLE CARD INTRO.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="w-full flex justify-center pt-20 xs:pt-24 sm:pt-28">
+  <div class="text-center px-2">
+    <!-- Bigger logo on mobile -->
+    <img src="images/college logo.png" alt="College Banner" 
+     class="mx-auto mb-2 xs:mb-3 sm:mb-4 -mt-8 
+            w-58 xs:w-52 sm:w-60 md:w-96 lg:w-[28rem] xl:w-[32rem] 2xl:w-[36rem]">
   </div>
 </div>
 
-      <!-- Tagline / Description - Centered with landscape adjustments -->
-      <div class="w-full max-w-[280px] xs:max-w-xs sm:max-w-md md:max-w-2xl text-center mt-6 xs:-mt-4 sm:-mt-8 md:-mt-10 px-2 landscape:max-w-md landscape:md:max-w-2xl">
-        <p class="text-yellow-50 mb-3 xs:mb-4 sm:mb-6 md:mb-8 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed landscape:text-sm landscape:sm:text-base">
+
+    <!-- Hero Content with Video - Centered -->
+    <div class="min-h-screen flex flex-col items-center justify-center 
+            -mt-48 xs:-mt-32 sm:-mt-0 md:-mt-48 
+            px-3 xs:px-4 pt-2 xs:pt-4 sm:pt-8">
+
+      <!-- Video Box -->
+      <div class="w-full max-w-[280px] xs:max-w-sm sm:max-w-lg md:max-w-3xl relative px-2 sm:px-4">
+        <div class="w-full aspect-video">
+          <video autoplay muted loop playsinline
+            class="rounded-xl shadow-lg w-full h-full object-cover mix-blend-screen opacity-100 z-0">
+            <source src="videos/TITLE CARD INTRO.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="w-full max-w-[260px] xs:max-w-xs sm:max-w-md md:max-w-2xl text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 px-2">
+        <p class="text-yellow-50 mb-3 xs:mb-4 sm:mb-6 md:mb-8 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed">
           A battle of circuits, code, and creativity.<br class="hidden xs:block" />
           <span class="text-pink-500 font-semibold">Electro Thrive 2025</span> is not just an event – it's a challenge
           to your tech instincts. Join us for robotics, IoT games, coding clashes, and more with Squid Game-inspired energy.
         </p>
 
-        <!-- Register Button - Centered -->
+        <!-- Register Button -->
         <div class="text-center">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header"
-            class="inline-block bg-pink-600 hover:bg-pink-500 text-white font-semibold py-1 xs:py-2 sm:py-3 px-4 xs:px-6 sm:px-8 rounded-full shadow-lg shadow-pink-500/30 transition-transform transform hover:scale-105 duration-300 text-xs xs:text-sm sm:text-base">
+            class="inline-block bg-pink-600 hover:bg-pink-500 text-white font-semibold py-2 px-5 xs:py-2 xs:px-6 sm:py-3 sm:px-8 rounded-full shadow-lg shadow-pink-500/30 transition-transform transform hover:scale-105 duration-300 text-sm xs:text-base">
             Register Now
           </a>
         </div>
@@ -143,103 +165,107 @@
 
 
 
+
   <section id="about">
-    <!-- About Section: Squid Game Themed (Visible only on md and up) -->
-    <section
-      class="md:block  bg-[url('images/bk1.jpg')] bg-cover bg-center bg-no-repeat relative min-h-screen py-20 px-8">
-      <!-- Overlay for readability -->
-      <div class="absolute inset-0 bg-black/70 z-0"></div>
+  <!-- About Section: Squid Game Themed (Visible on all devices now) -->
+  <section
+    class="block bg-[url('images/bk1.jpg')] bg-cover bg-center bg-no-repeat relative min-h-screen py-10 px-4 sm:py-16 sm:px-6 md:py-20 md:px-8">
+    
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black/70 z-0"></div>
 
-      <!-- Content Wrapper -->
-      <div class="relative z-10 max-w-7xl mx-auto">
-        <h2
-          class="text-4xl font-bold text-pink-500 mb-16 text-center drop-shadow-[0_0_15px_#ff0080] tracking-wide uppercase">
-          About Electro Thrive
-        </h2>
+    <!-- Content Wrapper -->
+    <div class="relative z-10 max-w-7xl mx-auto">
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl font-bold text-pink-500 mb-10 sm:mb-14 md:mb-16 text-center drop-shadow-[0_0_15px_#ff0080] tracking-wide uppercase">
+        About Electro Thrive
+      </h2>
 
-        <!-- Card 1: Event Overview -->
-        <div class="flex flex-col md:flex-row items-center mb-16">
-          <div class="md:w-1/2 p-6">
-            <div
-              class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">Event Overview</h3>
-              <p class="text-gray-200 leading-relaxed">
-                Electro Thrive 2025 is a national-level tech fest inspired by high-stakes challenges and creative
-                survival. Step into a world of innovation, rivalry, and thrilling breakthroughs.
-              </p>
-            </div>
+      <!-- Card 1: Event Overview -->
+      <div class="flex flex-col md:flex-row items-center mb-10 sm:mb-12 md:mb-16">
+        <div class="w-full md:w-1/2 p-4 sm:p-6">
+          <div
+            class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">Event Overview</h3>
+            <p class="text-gray-200 leading-relaxed text-justify">
+              Electro Thrive 2025 is a national-level tech fest inspired by high-stakes challenges and creative
+              survival. Step into a world of innovation, rivalry, and thrilling breakthroughs.
+            </p>
           </div>
-          <div class="md:w-1/2"></div>
         </div>
-
-        <!-- Card 2: Event Dates -->
-        <div class="flex flex-col md:flex-row-reverse items-center mb-16">
-          <div class="md:w-1/2 p-6">
-            <div
-              class="bg-white/5 backdrop-blur-md border border-green-400/30 rounded-xl p-6 shadow-lg hover:shadow-green-400/40 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-green-400 mb-2 tracking-wider uppercase">Event Dates</h3>
-              <p class="text-gray-200 leading-relaxed">
-                ⚡ <strong>Day 1</strong> Sept 12, 2025: Techno Quiz, Paper Presentation, Treasure Hunt, Circuit Debugging, IPL Auction, E-Sports<br><br>
-                ⚡ <strong>Day 2</strong> Sept 13, 2025: Group Dance, Solo Dance, Photography, Short Film, Adaptune 
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2"></div>
-        </div>
-
-        <!-- Card 3: DEPT -->
-        <div class="flex flex-col md:flex-row items-center mb-16">
-          <div class="md:w-1/2 p-6">
-            <div
-              class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">ABOUT THE DEPARTMENT :-</h3>
-              <p class="text-gray-200 leading-relaxed">
-                    The Department of Electronics and Communication Engineering, established in 2002 with an initial intake of 60 then increased to 120 in 2006 is NBA-accredited till 2026 and permanently affiliated to Anna University since 2013. 
-                    With 24 experienced faculty members, including 12 Ph.D holders and 10 pursuing Ph.D and 2 recognized Ph.D supervisors(Ref. No. 2640062), the department mentors 491 students and several Ph.D scholars—one awarded a Ph.D on 16.09.2022.
-                    The department features 6 classrooms, 6 laboratories, an exclusive seminar hall, a Centre of Excellence in AI & IoT, and is supported by 3 technical staff. 
-                    It has completed AICTE-funded MODROBS and STTP projects worth ₹10 Lakhs and received ₹90 Lakhs for establishing an IDEA Lab. It also secured ₹1 Lakh DST-SERB funding to host a National-Level Conference in November 2022, fostering innovation and research collaboration.
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2"></div>
-        </div>
-
-        <!-- Card 4: ABOUT THE INSTITUTION :- -->
-        <div class="flex flex-col md:flex-row-reverse items-center mb-16">
-          <div class="md:w-1/2 p-6">
-            <div
-              class="bg-white/5 backdrop-blur-md border border-green-400/30 rounded-xl p-6 shadow-lg hover:shadow-green-400/40 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-green-400 mb-2 tracking-wider uppercase">ABOUT THE INSTITUTION :-</h3>
-              <p class="text-gray-200 leading-relaxed">
-                Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College was established in the year 2002 under R.S.Trust, founded by the Philanthropic couple – Col. Prof. Vel. Dr. R. Rangarajan, Founder President & Chairman and Dr. Sagunthala Rangarajan, Foundress Vice-Chairman respectively.
-                 Under the governance of AICTE & Anna University, this College has 10 branches of study with 9 UG Programmes and 2 PG Programmes.
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2"></div>
-        </div>
-
-        <!-- Card 5: Awards & Prizes -->
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 p-6">
-            <div
-              class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">Awards & Prizes</h3>
-              <p class="text-gray-200 leading-relaxed">
-                🎖️ Cash prizes up to ₹30,000<br>
-                🎖️ Official certifications
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2"></div>
-        </div>
+        <div class="hidden md:block md:w-1/2"></div>
       </div>
-    </section>
+
+      <!-- Card 2: Event Dates -->
+      <div class="flex flex-col md:flex-row-reverse items-center mb-10 sm:mb-12 md:mb-16">
+        <div class="w-full md:w-1/2 p-4 sm:p-6">
+          <div
+            class="bg-white/5 backdrop-blur-md border border-green-400/30 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-green-400/40 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-green-400 mb-2 tracking-wider uppercase">Event Dates</h3>
+            <p class="text-gray-200 leading-relaxed text-justify">
+              ⚡ <strong>Day 1</strong> Sept 12, 2025: Techno Quiz, Paper Presentation, Treasure Hunt, Circuit Debugging, IPL Auction, E-Sports<br><br>
+              ⚡ <strong>Day 2</strong> Sept 13, 2025: Group Dance, Solo Dance, Photography, Short Film, Adaptune 
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <!-- Card 3: ABOUT THE INSTITUTION -->
+      
+      <div class="flex flex-col md:flex-row items-center mb-10 sm:mb-12 md:mb-16">
+        <div class="w-full md:w-1/2 p-4 sm:p-6">
+          <div
+            class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">ABOUT THE INSTITUTION :-</h3>
+            <p class="text-gray-200 leading-relaxed text-justify">
+              Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College was established in the year 2002 under R.S.Trust, founded by the Philanthropic couple – Col. Prof. Vel. Dr. R. Rangarajan, Founder President & Chairman and Dr. Sagunthala Rangarajan, Foundress Vice-Chairman respectively.
+              Under the governance of AICTE & Anna University, this College has 10 branches of study with 9 UG Programmes and 2 PG Programmes.
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <!-- Card 4: DEPT -->
+      <div class="flex flex-col md:flex-row-reverse items-center mb-10 sm:mb-12 md:mb-16">
+        <div class="w-full md:w-1/2 p-4 sm:p-6">
+          <div
+            class="bg-white/5 backdrop-blur-md border border-green-400/30 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-green-400/40 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-green-400 mb-2 tracking-wider uppercase">ABOUT THE DEPARTMENT :-</h3>
+            <p class="text-gray-200 leading-relaxed text-justify">
+              The Department of Electronics and Communication Engineering, established in 2002 with an initial intake of 60 then increased to 120 in 2006 is NBA-accredited till 2026 and permanently affiliated to Anna University since 2013. 
+              With 24 experienced faculty members, including 12 Ph.D holders and 10 pursuing Ph.D and 2 recognized Ph.D supervisors(Ref. No. 2640062), the department mentors 491 students and several Ph.D scholars—one awarded a Ph.D on 16.09.2022.
+              The department features 6 classrooms, 6 laboratories, an exclusive seminar hall, a Centre of Excellence in AI & IoT, and is supported by 3 technical staff. 
+              It has completed AICTE-funded MODROBS and STTP projects worth ₹10 Lakhs and received ₹90 Lakhs for establishing an IDEA Lab. It also secured ₹1 Lakh DST-SERB funding to host a National-Level Conference in November 2022, fostering innovation and research collaboration.
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+
+      <!-- Card 5: Awards & Prizes -->
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 p-4 sm:p-6">
+          <div
+            class="bg-white/5 backdrop-blur-md border border-pink-500/30 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-pink-500/40 transition-all duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold text-pink-400 mb-2 tracking-wider uppercase">Awards & Prizes</h3>
+            <p class="text-gray-200 leading-relaxed text-justify">
+              🎖️ Cash prizes up to ₹30,000<br>
+              🎖️ Official certifications
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+    </div>
   </section>
+</section>
+
   <!-- Event Section: Squid Game Inspired -->
 
 
-  <!-- EVENTS SECTION -->
+   <!-- EVENTS SECTION -->
   <section id="events" class="bg-black bg-[url('images/res.png')] bg-cover bg-center bg-no-repeat relative py-20 px-8">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/80 z-0 "></div>
@@ -252,11 +278,11 @@
       <!-- Event Category Buttons -->
       <div class="flex flex-wrap justify-center gap-6 mb-12">
         <button onclick="toggleContent('technicalEvents')"
-          class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-500/30 transition-transform transform hover:scale-105 duration-300">
+          class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-4 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-500/30 transition-transform transform hover:scale-105 duration-300">
           Technical Events
         </button>
         <button onclick="toggleContent('nonTechnicalEvents')"
-          class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-green-500/30 transition-transform transform hover:scale-105 duration-300">
+          class="bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 px-4 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-green-500/30 transition-transform transform hover:scale-105 duration-300">
           Non-Technical Events
         </button>
       </div>
@@ -271,9 +297,11 @@
            class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
       <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Paper Presentation</h4>
       <p class="text-gray-300 mb-4">Showcase your innovative ideas through technical papers judged by experts.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="techcomp/paper.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" 
+           class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+        <a href="techcomp/paper.html" 
+           class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
       </div>
     </div>
 
@@ -283,9 +311,11 @@
            class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
       <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Techno Quiz</h4>
       <p class="text-gray-300 mb-4">Test your technical awareness in a high-speed, high-stakes quiz face-off.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="techcomp/technoquiz.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" 
+           class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+        <a href="techcomp/technoquiz.html" 
+           class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
       </div>
     </div>
 
@@ -295,9 +325,11 @@
            class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
       <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Circuit Debugging</h4>
       <p class="text-gray-300 mb-4">Decode malfunctioning circuits under pressure — no second chances.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="techcomp/circuit.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" 
+           class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+        <a href="techcomp/circuit.html" 
+           class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
       </div>
     </div>
 
@@ -308,101 +340,116 @@
 <div id="nonTechnicalEvents" class="toggle-content max-h-0 overflow-hidden opacity-0 transition-all duration-700 ease-in-out mt-8">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[500px] overflow-y-auto px-4 scroll-fade-in scrollbar-squid">
 
-    <!-- E-Sports -->
+    <!-- Example: E-Sports -->
     <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
       <img src="images/esports.png" alt="E-Sports" 
            class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
       <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">E-Sports</h4>
       <p class="text-gray-300 mb-4">Battle it out in a digital arena. Only the most strategic survive.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/esports.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" 
+           class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+        <a href="notech/esports.html" 
+           class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
       </div>
     </div>
 
-    <!-- IPL Auction -->
     <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/iplaution.png" alt="IPL Auction" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">IPL Auction</h4>
-      <p class="text-gray-300 mb-4">Play the role of team manager and strategize your dream team in a mock IPL auction!</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/iplauction.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        <img src="images/iplaution.png" alt="IPL Auction"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">IPL Auction</h4>
+        <p class="text-gray-300 mb-4">Test your cricketing knowledge and team strategy skills.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3ZVdT9ylUhwA9kQzjzGQU2V9vsmfpoFbe25B6yNm2uHDwQg/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/iplauction.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Group Dance -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/groupdance.png" alt="Group Dance" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Group Dance</h4>
-      <p class="text-gray-300 mb-4">Show your team's energy and coordination with a mesmerizing group dance performance.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/groupdance.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 💃 Group Dance -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/groupdance.png" alt="Group Dance"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Group Dance</h4>
+        <p class="text-gray-300 mb-4">Showcase your moves with a team that owns the stage.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScMum9rBfC1kxZ6cEN3Y_cg2rDShDUeYw4OafKkzAkYB0eyog/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/groupdance.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Solo Dance -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/solodance.png" alt="Solo Dance" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Solo Dance</h4>
-      <p class="text-gray-300 mb-4">A solo stage to ignite your moves and channel your inner fire into an electrifying performance.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/solodance.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 🎤 Solo Dance -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/solodance.png" alt="Solo Dance"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Solo Dance</h4>
+        <p class="text-gray-300 mb-4">Take the spotlight and dance like nobody’s watching.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVdQwP8sXkW9CUaUR6Ul-hqDihb0CwVswb0HgKxA0Fc2Vhzw/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/solodance.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Photography -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/photography.png" alt="Photography" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Photography</h4>
-      <p class="text-gray-300 mb-4">Capture the world through your lens and show your perspective in every shot.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/photography.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 📸 Photography -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/photography.png" alt="Photography"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Photography</h4>
+        <p class="text-gray-300 mb-4">Capture the world through your unique perspective.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEtJ7rXWQ6DqCcd6D27Qt6m0-cgQ0JxGxGSH_O4rXUeSHoCg/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/photography.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Short Film -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/shortfilm.png" alt="Short Film" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Short Film</h4>
-      <p class="text-gray-300 mb-4">Lights, camera, action! Tell your story in a short yet powerful cinematic journey.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/shortfilm.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 🎬 Short Film -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/shortfilm.png" alt="Short Film"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Short Film</h4>
+        <p class="text-gray-300 mb-4">Unleash your creativity with storytelling through film.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-4fE0o9qioJ9a5Yq9l5rBo3cT0M0Fd6iKMLZr0xVhXbpFpw/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/shortfilm.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Adaptune -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/adaptune.png" alt="Adaptune" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Adaptune</h4>
-      <p class="text-gray-300 mb-4">Dance to unpredictable tunes and surprise the audience with your adaptability.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/adaptune.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 🎶 Adaptune -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/adaptune.png" alt="Adaptune"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Adaptune</h4>
+        <p class="text-gray-300 mb-4">Dance to random tunes with your creativity and adaptability.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSejBpR24oVvVRLRQqwVRhJ7qQYb6p_8lD6H4JgRUc3n9AQ3Pw/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/adaptune.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Treasure Hunt -->
-    <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
-      <img src="images/tresurehunt.png" alt="Treasure Hunt" 
-           class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
-      <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Treasure Hunt</h4>
-      <p class="text-gray-300 mb-4">Decode clues, crack riddles, and race against time to uncover the ultimate treasure.</p>
-      <div class="flex gap-4">
-        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSffvGmBytqKrDXCVF2uJGBBONWDl0I0b-FvkcMdMGKX4rpGew/viewform?usp=header" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
-        <a href="notech/treasure.html" class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+      <!-- 🗺️ Treasure Hunt -->
+      <div class="bg-black/40 border-l-4 border-pink-600 rounded-lg p-6 shadow-inner shadow-pink-600/30 flex flex-col items-center text-center">
+        <img src="images/tresurehunt.png" alt="Treasure Hunt"
+             class="w-40 h-40 rounded-full border-2 border-pink-600 shadow-md shadow-pink-600/30 transition duration-300 hover:scale-[1.02] mb-4" />
+        <h4 class="text-pink-300 text-xl font-semibold uppercase tracking-wider mb-2">Treasure Hunt</h4>
+        <p class="text-gray-300 mb-4">Solve riddles and follow clues to find the hidden treasure.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfS95qKPBVZcJg8KswE0Qw8gx_rApBB_4EXAQBlc0XzUOaJ6A/viewform"
+             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full shadow-lg shadow-pink-600/50 transition-transform transform hover:scale-105 duration-300">Register Now</a>
+          <a href="notech/treasure.html"
+             class="bg-white text-pink-600 font-semibold py-1.5 px-3 text-sm sm:py-2 sm:px-6 sm:text-base rounded-full border-2 border-pink-600 hover:bg-pink-100 transition-transform transform hover:scale-105 duration-300">More Info</a>
+        </div>
       </div>
-    </div>
 
   </div>
 </div>
@@ -472,664 +519,284 @@
     }
   </script>
 
-  <section id="coordinators"
-    class="relative bg-black bg-[url('images/coordinators.png')] bg-cover bg-center bg-no-repeat py-20 px-4 overflow-hidden">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/80 z-0"></div>
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 0px rgba(236,72,153,0); }
+    50% { box-shadow: 0 0 25px rgba(236,72,153,.6),0 0 45px rgba(20,184,166,.5); }
+  }
+  .tilt:hover {
+    transform: perspective(800px) rotateY(-8deg) rotateX(5deg) scale(1.1) !important;
+  }
+</style>
 
-    <div class="relative z-10 max-w-7xl mx-auto">
-      <h2
-        class="text-4xl font-bold text-center text-pink-500 drop-shadow-[0_0_10px_#ff3cac] tracking-widest uppercase mb-16">
-        Coordinators
-      </h2>
+<section id="coordinators" class="relative py-10 bg-[url('images/coordinator.png')] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-      <!-- Scrollable Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+  <div class="relative z-10">
+    <!-- SECRETARIES Block -->
+    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-widest mb-8">
+      <span class="text-teal-400">SECRETARIES</span>
+    </h2>
 
-        <!-- Repeat this card to fill loop -->
-        <!-- CARD COMPONENT -->
-        <template id="card-template">
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-          <div class="card-custom">
-            <div class="flex justify-end px-4 pt-4">
-              <button class="text-gray-400 hover:text-white">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-                  <path
-                    d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-col items-center pb-6">
-              <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-              <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-             
-              
-            </div>
-          </div>
-        </template>
+    <div id="secretary-showcase" class="select-none relative overflow-hidden px-2 sm:px-6 touch-none mb-16">
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent"></div>
+      <div id="secretary-strip" class="strip flex gap-4 sm:gap-8 will-change-transform"></div>
+    </div>
 
-        <!-- Generate 4 Columns -->
-        <div class="h-[500px] overflow-hidden relative">
-          <div class="scroll-group animate-scroll-down space-y-6">
-            <!-- Duplicate 1 card 6 times -->
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
+    <!-- COORDINATORS Block -->
+    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-widest mb-8">
+      <span class="text-pink-500">COORDINATORS</span>
+    </h2>
+
+    <div id="coordinator-showcase" class="pause-on-hover select-none relative overflow-hidden px-2 sm:px-6 touch-none">
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent"></div>
+
+      <div id="coordinator-strip" class="strip flex gap-4 sm:gap-8 will-change-transform" style="animation: marquee 25s linear infinite;">
+        <div class="flex gap-4 sm:gap-8">
+          <!-- Coordinator cards will be generated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Coordinator data
+const coordinators = [
+  { name: "ABISH S", image: "images/coordinator/ABISH S.jpg" },
+  { name: "Prabanjan A (Final year)", image: "images/coordinator/Prabanjan A (Final year).jpg" },
+  { name: "Akash S (III - YR)", image: "images/coordinator/Akash S (III - YR).jpg" },
+  { name: "BARATHWAJ S (III-YR)", image: "images/coordinator/BARATHWAJ S (III-YR).jpg" },
+  { name: "Benjamine 2nd yr", image: "images/coordinator/Benjamine 2nd yr.jpg" },
+  { name: "DEEKSHIDHA KR", image: "images/coordinator/DEEKSHIDHA KR.jpg" },
+  { name: "Gayathri V III-yr", image: "images/coordinator/Gayathri V III-yr.jpg" },
+  { name: "Giridharan R(Final year)", image: "images/coordinator/Giridharan R(Final year).jpg" },
+  { name: "JAGADEESH B (II YR)", image: "images/coordinator/JAGADEESH B (II YR).jpg" },
+  { name: "K. Vasanth", image: "images/coordinator/K. Vasanth.jpg" },
+  { name: "Mathan 2nd year", image: "images/coordinator/Mathan 2nd year.jpg" },
+  { name: "MOHANAPRIYA M (III Year)", image: "images/coordinator/MOHANAPRIYA M (III Year).jpg" },
+  { name: "Priyanga S (III - year)", image: "images/coordinator/Priyanga S (III - year).jpg" },
+  { name: "Reshin Paul R.S", image: "images/coordinator/Reshin Paul R.S.png" },
+  { name: "Rithik TS", image: "images/coordinator/rithik.jpg" },
+  { name: "S S Daarmick", image: "images/coordinator/S S Daarmick.jpg" },
+  { name: "Sanjay Kumar E (final year)", image: "images/coordinator/Sanjay Kumar E (final year).jpg" },
+  { name: "Sanjay.M", image: "images/coordinator/Sanjay.m.JPG" },
+  { name: "Sriharini (final year)", image: "images/coordinator/Sriharini (Final Year).png" },
+  { name: "Thanigai Raj  S (final year)", image: "images/coordinator/Thanigai Raj  S.jpg" },
+  { name: "Vasanthan.m", image: "images/coordinator/Vasanthan.m.jpg" },
+  { name: "Bharath", image: "images/coordinator/❖𝙱 𝙷 𝙰 𝚁 𝙰 𝚃 𝙷 (2007).jpg" }
+];
+
+// Secretary data
+const secretaries = [
+  { name: "ABDUL KAREEM M(III-YR)", role: "Dept joint secretary", image: "images/coordinator/ABDUL KAREEM M(III-YR).jpg" }
+  // Add more secretaries if needed
+];
+
+// Function to create coordinator cards (standard)
+function createCards(arr, stripId, ringColor) {
+  const strip = document.getElementById(stripId);
+  strip.innerHTML = '';
+  arr.forEach((person, index) => {
+    const figure = document.createElement('figure');
+    figure.className = `group relative w-32 h-44 sm:w-40 sm:h-56 md:w-[18rem] md:h-[24rem] shrink-0 rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-800 ring-2 ${ringColor} transition-all duration-500 ease-out hover:z-10 tilt`;
+    figure.style.animation = `floaty ${6 + index % 3}s ease-in-out infinite, glowPulse 3s ease-in-out infinite`;
+
+    const img = document.createElement('img');
+    img.src = person.image;
+    img.alt = person.name;
+    img.className = "h-full w-full object-cover transition-transform duration-500 group-hover:scale-125";
+    figure.appendChild(img);
+
+    const caption = document.createElement('figcaption');
+    caption.className = "absolute bottom-0 left-0 w-full bg-black/60 text-white text-center py-1 sm:py-2 font-bold text-sm sm:text-base";
+    caption.textContent = person.name;
+    figure.appendChild(caption);
+
+    strip.appendChild(figure);
+  });
+
+  // Duplicate for seamless marquee
+  const firstSet = strip.cloneNode(true);
+  const secondSet = strip.cloneNode(true);
+  strip.appendChild(firstSet);
+  strip.appendChild(secondSet);
+}
+
+// Function to create seamless circular secretary cards (with role)
+function createCircularCards(arr, stripId, ringColor) {
+  const strip = document.getElementById(stripId);
+  strip.innerHTML = '';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'flex gap-4 sm:gap-8 will-change-transform';
+
+  arr.forEach((person, index) => {
+    const figure = document.createElement('figure');
+    figure.className = `group relative w-32 h-44 sm:w-40 sm:h-56 md:w-[18rem] md:h-[24rem] shrink-0 rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-800 ring-2 ${ringColor} transition-all duration-500 ease-out hover:z-10 tilt`;
+    figure.style.animation = `floaty ${6 + index % 3}s ease-in-out infinite, glowPulse 3s ease-in-out infinite`;
+
+    const img = document.createElement('img');
+    img.src = person.image;
+    img.alt = person.name;
+    img.className = "h-full w-full object-cover transition-transform duration-500 group-hover:scale-125";
+    figure.appendChild(img);
+
+    const caption = document.createElement('figcaption');
+    caption.className = "absolute bottom-0 left-0 w-full bg-black/60 text-white text-center py-1 sm:py-2 font-bold text-sm sm:text-base";
+
+    // Show both name and role
+    caption.innerHTML = `${person.name}<br><span class="text-xs sm:text-sm font-normal">${person.role || ''}</span>`;
+    figure.appendChild(caption);
+
+    wrapper.appendChild(figure);
+  });
+
+  // Duplicate wrapper for circular seamless scrolling
+  const clone1 = wrapper.cloneNode(true);
+  const clone2 = wrapper.cloneNode(true);
+  strip.appendChild(wrapper);
+  strip.appendChild(clone1);
+  strip.appendChild(clone2);
+
+  // Adjust speed based on number of secretaries
+  const baseSpeed = 22;
+  const animationDuration = Math.max(baseSpeed, arr.length * 2);
+  strip.style.display = 'flex';
+  strip.style.flexWrap = 'nowrap';
+  strip.style.animation = `marquee ${animationDuration}s linear infinite`;
+}
+
+// Setup marquee hover/pause for coordinators only
+function setupMarquee(showcaseId, stripId, isSecretary = false) {
+  const strip = document.getElementById(stripId);
+  const showcase = document.getElementById(showcaseId);
+  if (!isSecretary) {
+    showcase.addEventListener('mouseenter', () => { strip.style.animationPlayState = 'paused'; });
+    showcase.addEventListener('mouseleave', () => { strip.style.animationPlayState = 'running'; });
+    showcase.addEventListener('touchstart', () => { strip.style.animationPlayState = 'paused'; }, { passive: true });
+    showcase.addEventListener('touchend', () => { strip.style.animationPlayState = 'running'; });
+  }
+}
+
+// Initialize
+createCircularCards(secretaries, 'secretary-strip', 'ring-teal-400'); // Secretaries with role, circular scroll
+createCards(coordinators, 'coordinator-strip', 'ring-pink-600');       // Coordinators standard scroll
+
+setupMarquee('secretary-showcase', 'secretary-strip', true);
+setupMarquee('coordinator-showcase', 'coordinator-strip', false);
+
+</script>
+
+
+
+
+  <section id="contact" class="relative py-12 sm:py-16 bg-black overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="images/contact.png" alt="Contact Background" class="w-full h-full object-cover opacity-20" />
+    <div class="absolute inset-0 bg-gradient-to-br from-black/90 via-pink-900/20 to-black/80 opacity-95"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-pink-500 drop-shadow-[0_0_10px_#ff3cac] tracking-widest uppercase mb-10 sm:mb-16">
+      Contact Us
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 sm:gap-10">
+
+      <!-- LEFT Column (Contact Details + Hostel) -->
+      <div class="space-y-8 sm:space-y-10">
+
+        <!-- Location -->
+        <div class="flex items-start gap-3 sm:gap-4">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12l4.243-4.243M6.343 7.343L10.586 12 6.343 16.657" />
+          </svg>
+          <div>
+            <h4 class="text-lg sm:text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Location</h4>
+            <p class="text-gray-300 text-sm sm:text-base">Vel Tech High Tech Dr. RR Dr. SR Engineering College,<br>Avadi, Chennai - 600062</p>
           </div>
         </div>
 
-        <div class="h-[500px] overflow-hidden relative">
-          <div class="scroll-group animate-scroll-up space-y-6">
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
+        <!-- Phone -->
+        <div class="flex items-start gap-3 sm:gap-4">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m3 10H3m6 0v2m9 0l2 2m-2-2l2-2" />
+          </svg>
+          <div>
+            <h4 class="text-lg sm:text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Phone</h4>
+            <p class="text-gray-300 text-sm sm:text-base">+91 98765 43210</p>
           </div>
         </div>
 
-        <div class="h-[500px] overflow-hidden relative">
-          <div class="scroll-group animate-scroll-down space-y-6">
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
+        <!-- Email -->
+        <div class="flex items-start gap-3 sm:gap-4">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-400 animate-spin-slow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 16V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8" />
+          </svg>
+          <div>
+            <h4 class="text-lg sm:text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Email</h4>
+            <p class="text-gray-300 text-sm sm:text-base">electrothrive@veltech.ac.in</p>
           </div>
         </div>
 
-        <div class="h-[500px] overflow-hidden relative">
-          <div class="scroll-group animate-scroll-up space-y-6">
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
-            <div class="card-custom">
-              
-              <div class="flex flex-col items-center pb-6">
-                <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400"
-                  src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie" />
-                <h5 class="mb-1 text-lg font-medium text-white">Bonnie Green</h5>
-               
-                
-              </div>
-            </div>
+        <!-- Bus Routes -->
+        <div class="flex items-start gap-3 sm:gap-4">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-400 animate-ping" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <div>
+            <h4 class="text-lg sm:text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Bus Routes</h4>
+            <p class="text-gray-300 text-sm sm:text-base">
+              Buses from Avadi, Ambattur, Tambaram, Koyambedu, Red Hills.<br>
+              <a href="https://maps.app.goo.gl/ckRSicwSP5GCBkkV9" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-pink-200 italic underline hover:text-pink-400">
+  Check college map for details.
+</a>
+
+            </p>
+          </div>
+        </div>
+
+        <!-- Hostel Stay for Outsiders -->
+        <div class="flex items-start gap-3 sm:gap-4">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 2-2 2-2 4s2 2 2 4M12 3v4m0 4v.01" />
+          </svg>
+          <div>
+            <h4 class="text-lg sm:text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Hostel Stay (For Outsiders)</h4>
+            <p class="text-gray-300 text-sm sm:text-base">
+              Limited accommodation for participants from outside Chennai.<br>
+              Separate hostels for boys and girls with 24/7 security & amenities.<br>
+              <span class="text-xs sm:text-sm text-pink-200 italic">First-come-first-serve. ID proof mandatory.</span>
+            </p>
           </div>
         </div>
 
       </div>
+
+      <!-- RIGHT Column (Google Map Embed) -->
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-pink-600/40">
+  <iframe class="w-full h-64 sm:h-80 md:h-[400px]"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15557.168642682642!2d80.10871015!3d13.1148519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261fa6dd781ab%3A0xaeb7f84539f24d7c!2sVel%20Tech%20High%20Tech%20Dr.%20Rangarajan%20Dr.%20Sakunthala%20Engineering%20College!5e0!3m2!1sen!2sin!4v1622453671380!5m2!1sen!2sin"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
     </div>
-  </section>
-
-  <style>
-    @keyframes scrollDown {
-      0% {
-        transform: translateY(-50%);
-      }
-
-      100% {
-        transform: translateY(0%);
-      }
-    }
-
-    @keyframes scrollUp {
-      0% {
-        transform: translateY(0%);
-      }
-
-      100% {
-        transform: translateY(-50%);
-      }
-    }
-
-    .animate-scroll-down {
-      animation: scrollDown 10s linear infinite;
-    }
-
-    .animate-scroll-up {
-      animation: scrollUp 10s linear infinite;
-    }
-
-    .card-custom {
-      @apply w-full max-w-sm mx-auto bg-white/10 border border-pink-500/30 rounded-xl shadow-md backdrop-blur-md p-4 text-white text-center text-lg font-semibold hover:scale-[1.03] transition-transform duration-300;
-    }
-  </style>
-
-  <script>
-    // Duplicate the same template card 6 times into each column
-    document.addEventListener('DOMContentLoaded', () => {
-      const template = document.querySelector('#card-template');
-      document.querySelectorAll('.scroll-group').forEach(group => {
-        for (let i = 0; i < 6; i++) {
-          const clone = template.content.cloneNode(true);
-          group.appendChild(clone);
-        }
-      });
-    });
-  </script>
-
-
-
-  <section id="contact" class="relative py-16 bg-black overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-      <img src="images/contact.png" alt="Contact Background" class="w-full h-full object-cover opacity-20" />
-      <div class="absolute inset-0 bg-gradient-to-br from-black/90 via-pink-900/20 to-black/80 opacity-95"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-      <h2
-        class="text-4xl font-bold text-center text-pink-500 drop-shadow-[0_0_10px_#ff3cac] tracking-widest uppercase mb-16">
-        Contact Us
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-10">
-
-        <!-- LEFT Column (Contact Details + Hostel) -->
-        <div class="space-y-10">
-
-          <!-- Location -->
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.657 16.657L13.414 12l4.243-4.243M6.343 7.343L10.586 12 6.343 16.657" />
-            </svg>
-            <div>
-              <h4 class="text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Location
-              </h4>
-              <p class="text-gray-300">Vel Tech High Tech Dr. RR Dr. SR Engineering College,<br>Avadi, Chennai - 600062
-              </p>
-            </div>
-          </div>
-
-          <!-- Phone -->
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m3 10H3m6 0v2m9 0l2 2m-2-2l2-2" />
-            </svg>
-            <div>
-              <h4 class="text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Phone</h4>
-              <p class="text-gray-300">+91 98765 43210</p>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 animate-spin-slow" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 16V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8" />
-            </svg>
-            <div>
-              <h4 class="text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Email</h4>
-              <p class="text-gray-300">electrothrive@veltech.ac.in</p>
-            </div>
-          </div>
-
-          <!-- Bus Routes -->
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 animate-ping" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <div>
-              <h4 class="text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Bus Routes
-              </h4>
-              <p class="text-gray-300">
-                Buses from Avadi, Ambattur, Tambaram, Koyambedu, Red Hills.<br>
-                <span class="text-sm text-pink-200 italic">Check college map for details.</span>
-              </p>
-            </div>
-          </div>
-
-          <!-- Hostel Stay for Outsiders -->
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-red-400 animate-pulse" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 2-2 2-2 4s2 2 2 4M12 3v4m0 4v.01" />
-            </svg>
-            <div>
-              <h4 class="text-xl font-semibold text-green-500 drop-shadow-[0_0_15px_#ff0080] tracking-wide">Hostel Stay
-                (For Outsiders)</h4>
-              <p class="text-gray-300">
-                Limited accommodation for participants from outside Chennai.<br>
-                Separate hostels for boys and girls with 24/7 security & amenities.<br>
-                <span class="text-sm text-pink-200 italic">First-come-first-serve. ID proof mandatory.</span>
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- RIGHT Column (Google Map Embed) -->
-        <div class="rounded-2xl overflow-hidden shadow-xl border border-pink-600/40">
-          <iframe class="w-full h-[400px]"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15557.168642682642!2d80.10871015!3d13.1148519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261fa6dd781ab%3A0xaeb7f84539f24d7c!2sVel%20Tech%20High%20Tech%20Dr.%20Rangarajan%20Dr.%20Sakunthala%20Engineering%20College!5e0!3m2!1sen!2sin!4v1622453671380!5m2!1sen!2sin"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
+  </div>
+</section>
 
   <script src="script.js"></script>
-
-
 </body>
 <!-- Footer Section -->
 <footer class="bg-black text-white py-12 px-4 border-t border-pink-900/50">
@@ -1138,18 +805,18 @@
       
       <!-- Logo and About -->
       <div class="md:col-span-2">
-        <div class="flex items-center mb-4">
-          <img src="images/ecltrothrive-cutout.png" alt="Electro Thrive Logo" class="w-32 h-16 mr-4">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start mb-4 text-center sm:text-left">
+          <img src="images/ecltrothrive-cutout.png" alt="Electro Thrive Logo" class="w-32 h-16 mb-2 sm:mb-0 sm:mr-4">
           <h3 class="text-2xl font-bold text-pink-500">Electro Thrive 2025</h3>
         </div>
-        <p class="text-gray-400 text-sm">
+        <p class="text-gray-400 text-sm text-center sm:text-left">
           A national-level technical symposium organized by the Department of Electronics and Communication Engineering, 
           Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College.
         </p>
       </div>
       
       <!-- Quick Links -->
-      <div>
+      <div class="text-center sm:text-left">
         <h4 class="text-lg font-semibold text-pink-400 mb-4 border-b border-pink-900 pb-2">Quick Links</h4>
         <ul class="space-y-2">
           <li><a href="#home" class="text-gray-400 hover:text-pink-400 transition">Home</a></li>
@@ -1161,23 +828,23 @@
       </div>
       
       <!-- Contact Info -->
-      <div>
+      <div class="text-center sm:text-left">
         <h4 class="text-lg font-semibold text-pink-400 mb-4 border-b border-pink-900 pb-2">Contact Us</h4>
         <ul class="space-y-3 text-gray-400">
-          <li class="flex items-start">
-            <svg class="w-5 h-5 mr-2 mt-0.5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <li class="flex flex-col sm:flex-row items-center sm:items-start sm:justify-start">
+            <svg class="w-5 h-5 mr-0 sm:mr-2 mb-1 sm:mb-0 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 12l4.243-4.243m-6.828 11.314L2.586 12l4.243-4.243" />
             </svg>
             <span>Vel Tech High Tech Dr. RR Dr. SR Engineering College, Avadi, Chennai - 600062</span>
           </li>
-          <li class="flex items-center">
-            <svg class="w-5 h-5 mr-2 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <li class="flex flex-col sm:flex-row items-center sm:items-start sm:justify-start">
+            <svg class="w-5 h-5 mr-0 sm:mr-2 mb-1 sm:mb-0 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             <span>+91 98765 43210</span>
           </li>
-          <li class="flex items-center">
-            <svg class="w-5 h-5 mr-2 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <li class="flex flex-col sm:flex-row items-center sm:items-start sm:justify-start">
+            <svg class="w-5 h-5 mr-0 sm:mr-2 mb-1 sm:mb-0 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span>electrothrive@veltech.ac.in</span>
@@ -1187,16 +854,14 @@
     </div>
     
     <!-- Social Media and Copyright -->
-    <div class="border-t border-pink-900/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <div class="flex space-x-6 mb-4 md:mb-0">
-        
-        <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+    <div class="border-t border-pink-900/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+      <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 mb-4 md:mb-0">
+        <a href="https://www.instagram.com/electrothrive2k25?igsh=YW5hNzI0eW1rbGhp" class="text-gray-400 hover:text-pink-400 transition">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 3.807.058h.468c2.456 0 2.784-.011 3.807-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-3.807v-.468c0-2.456-.011-2.784-.058-3.807-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
-            
           </svg>
         </a>
-        <p class="text-pink-400 font-bold ">INSTAGRAM</p>
+        <p class="text-pink-400 font-bold">INSTAGRAM</p>
       </div>
       <div class="text-center md:text-right text-gray-500 text-sm">
         <p>&copy; 2025 Electro Thrive. All rights reserved.</p>
@@ -1205,86 +870,4 @@
     </div>
   </div>
 </footer>
-<script>
-  // Coordinators data with image paths and names
-  const coordinators = [
-    { name: "ABDUL KAREEM M(III-YR)", image: "images/coordinator/ABDUL KAREEM M(III-YR).jpg" },
-    { name: "ABISH S", image: "images/coordinator/ABISH S.jpg" },
-    { name: "Prabanjan A (Final year)", image: "images/coordinator/Prabanjan A (Final year).jpg" },
-    { name: "Akash S (III - YR)", image: "images/coordinator/Akash S (III - YR).jpg" },
-    { name: "BARATHWAJ S (III-YR)", image: "images/coordinator/BARATHWAJ S (III-YR).jpg" },
-    { name: "Benjamine 2nd yr", image: "images/coordinator/Benjamine 2nd yr.jpg" },
-    { name: "DEEKSHIDHA KR", image: "images/coordinator/DEEKSHIDHA KR.jpg" },
-    { name: "Gayathri V III-yr", image: "images/coordinator/Gayathri V III-yr.jpg" },
-    { name: "Giridharan R(Final year)", image: "images/coordinator/Giridharan R(Final year).jpg" },
-    { name: "JAGADEESH B (II YR)", image: "images/coordinator/JAGADEESH B (II YR).jpg" },
-    { name: "K. Vasanth", image: "images/coordinator/K. Vasanth.jpg" },
-    { name: "Mathan 2nd year", image: "images/coordinator/Mathan 2nd year.jpg" },
-    { name: "MOHANAPRIYA M (III Year)", image: "images/coordinator/MOHANAPRIYA M (III Year).jpg" },
-    { name: "Priyanga S (III - year)", image: "images/coordinator/Priyanga S (III - year).jpg" },
-    { name: "Reshin Paul R.S", image: "images/coordinator/Reshin Paul R.S.png" },
-    { name: "Rithik TS", image: "images/coordinator/rithik.jpg" },
-    { name: "S S Daarmick", image: "images/coordinator/S S Daarmick.jpg" },
-    { name: "Sanjay Kumar E (final year)", image: "images/coordinator/Sanjay Kumar E (final year).jpg" },
-    { name: "Sanjay.M", image: "images/coordinator/Sanjay.m.JPG" },
-    { name: "Sriharini (final year)", image: "images/coordinator/Sriharini (Final Year).png" },
-    { name: "Thanigai Raj  S (final year)", image: "images/coordinator/Thanigai Raj  S.jpg" },
-    { name: "Vasanthan.m", image: "images/coordinator/Vasanthan.m.jpg" },
-    { name: "Bharath", image: "images/coordinator/❖𝙱 𝙷 𝙰 𝚁 𝙰 𝚃 𝙷 (2007).jpg" }
-  ];
-
-  // Function to create a coordinator card
-  function createCoordinatorCard(coordinator) {
-    const card = document.createElement('div');
-    card.className = 'card-custom';
-    
-    card.innerHTML = `
-      <div class="flex justify-end px-4 pt-4">
-        <button class="text-gray-400 hover:text-white">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3">
-            <path d="M2 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Zm6.041 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3ZM14 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3Z" />
-          </svg>
-        </button>
-      </div>
-      <div class="flex flex-col items-center pb-6">
-        <img class="w-20 h-20 mb-3 rounded-full shadow-lg border border-pink-400" 
-             src="${coordinator.image}" 
-             alt="${coordinator.name}" />
-        <h5 class="mb-1 text-lg font-medium text-white">${coordinator.name}</h5>
-      </div>
-    `;
-    
-    return card;
-  }
-
-  // Populate coordinator cards when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollGroups = document.querySelectorAll('.scroll-group');
-    
-    // Clear existing placeholder content
-    scrollGroups.forEach(group => {
-      group.innerHTML = '';
-    });
-
-    // Distribute coordinators evenly across scroll groups
-    scrollGroups.forEach((group, index) => {
-      const coordinatorsPerGroup = Math.ceil(coordinators.length / scrollGroups.length);
-      const startIdx = index * coordinatorsPerGroup;
-      const endIdx = startIdx + coordinatorsPerGroup;
-      const groupCoordinators = coordinators.slice(startIdx, endIdx);
-      
-      // Add coordinators to this group
-      groupCoordinators.forEach(coordinator => {
-        const card = createCoordinatorCard(coordinator);
-        group.appendChild(card);
-      });
-      
-      // Duplicate content for seamless scrolling animation
-      if (groupCoordinators.length > 0) {
-        const cloneGroup = group.cloneNode(true);
-        group.parentNode.appendChild(cloneGroup);
-      }
-    });
-  });
-</script>
 </html>

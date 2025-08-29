@@ -574,6 +574,25 @@
   .strip figure {
     pointer-events: auto; /* But allow interaction with individual cards */
   }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .coordinator-strip-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .coordinator-strip-container::before,
+    .coordinator-strip-container::after {
+      display: none;
+    }
+    #coordinator-rows .strip {
+      animation: none !important;
+      width: max-content;
+    }
+    #coordinator-rows .strip > div {
+      width: max-content;
+    }
+  }
 </style>
 
 <section id="coordinators" class="relative py-10 bg-[url('images/coordinator.png')] bg-cover bg-center bg-no-repeat">

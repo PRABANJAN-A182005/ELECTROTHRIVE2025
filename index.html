@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>electrothrive2025</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
      /* Use Oswald font and define the theme's iconic pink color */
@@ -530,8 +531,8 @@
     100% { transform: translateY(0); }
   }
   @keyframes glowPulse {
-    0%,100% { box-shadow: 0 0 0px rgba(236,72,153,0); }
-    50% { box-shadow: 0 0 25px rgba(236,72,153,.6),0 0 45px rgba(20,184,166,.5); }
+    0%,100% { box-shadow: 0 0 0px rgba(20,184,166,0); }
+    50% { box-shadow: 0 0 25px rgba(20,184,166,.6); }
   }
   .tilt:hover {
     transform: perspective(800px) rotateY(-8deg) rotateX(5deg) scale(1.1) !important;
@@ -541,17 +542,13 @@
   }
   
   /* Fix for mobile scrolling */
-  #coordinator-rows {
-    position: relative;
-    z-index: 1;
-  }
-  .coordinator-strip-container {
+  .secretary-strip-container {
     position: relative;
     overflow: hidden;
     margin-bottom: 1.5rem;
   }
-  .coordinator-strip-container::before,
-  .coordinator-strip-container::after {
+  .secretary-strip-container::before,
+  .secretary-strip-container::after {
     content: '';
     position: absolute;
     top: 0;
@@ -560,11 +557,11 @@
     z-index: 2;
     pointer-events: none;
   }
-  .coordinator-strip-container::before {
+  .secretary-strip-container::before {
     left: 0;
     background: linear-gradient(to right, rgba(0,0,0,0.7), transparent);
   }
-  .coordinator-strip-container::after {
+  .secretary-strip-container::after {
     right: 0;
     background: linear-gradient(to left, rgba(0,0,0,0.7), transparent);
   }
@@ -575,22 +572,58 @@
     pointer-events: auto; /* But allow interaction with individual cards */
   }
   
-  /* Mobile-specific styles */
+  /* Mobile-specific styles - UPDATED FOR AUTO-SCROLL */
   @media (max-width: 768px) {
-    .coordinator-strip-container {
-      overflow-x: auto;
+    .secretary-strip-container {
+      overflow: hidden; /* Changed from auto to hidden */
       -webkit-overflow-scrolling: touch;
     }
-    .coordinator-strip-container::before,
-    .coordinator-strip-container::after {
-      display: none;
+    .secretary-strip-container::before,
+    .secretary-strip-container::after {
+      display: block; /* Changed from none to block */
     }
-    #coordinator-rows .strip {
-      animation: none !important;
+    #secretary-strip {
+      animation: marquee 20s linear infinite !important; /* Force animation on mobile */
+      width: 200%; /* Double width for seamless scroll */
+    }
+    #secretary-strip > div {
       width: max-content;
     }
-    #coordinator-rows .strip > div {
-      width: max-content;
+    
+    /* Mobile text size adjustments */
+    #coordinators h2 {
+      font-size: 1.8rem !important;
+      margin-bottom: 1.2rem;
+    }
+    
+    .strip figure {
+      width: 7rem !important;
+      height: 10rem !important;
+    }
+    
+    .strip figcaption {
+      font-size: 0.75rem !important;
+      padding: 0.25rem !important;
+    }
+    
+    .strip figcaption span {
+      font-size: 0.65rem !important;
+    }
+  }
+
+  /* Additional mobile optimization for very small screens */
+  @media (max-width: 400px) {
+    .strip figure {
+      width: 6rem !important;
+      height: 8.5rem !important;
+    }
+    
+    .strip figcaption {
+      font-size: 0.7rem !important;
+    }
+    
+    .strip figcaption span {
+      font-size: 0.6rem !important;
     }
   }
 </style>
@@ -604,58 +637,22 @@
       <span class="text-teal-400">SECRETARIES</span>
     </h2>
 
-    <div id="secretary-showcase" class="select-none relative overflow-hidden px-2 sm:px-6 touch-none mb-16">
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent"></div>
+    <div class="secretary-strip-container select-none touch-none mb-16">
       <div id="secretary-strip" class="strip flex gap-4 sm:gap-8 will-change-transform"></div>
-    </div>
-
-    <!-- COORDINATORS -->
-    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-widest mb-8">
-      <span class="text-pink-500">COORDINATORS</span>
-    </h2>
-
-    <div id="coordinator-showcase" class="select-none relative overflow-hidden px-2 sm:px-6 touch-none">
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent"></div>
-      <div id="coordinator-rows" class="flex flex-col gap-6"></div>
     </div>
   </div>
 </section>
 
 <script>
-  const coordinators = [
-    { name: "Prabanjan A (Final year)", image: "images/coordinator/Prabanjan A (Final year).jpg" },
-    { name: "Reshin Paul R.S", image: "images/coordinator/Reshin Paul R.S.png" },
-    { name: "ABISH S", image: "images/coordinator/ABISH S.jpg" },
-    { name: "Akash S (III - YR)", image: "images/coordinator/Akash S (III - YR).jpg" },
-    { name: "BARATHWAJ S (III-YR)", image: "images/coordinator/BARATHWAJ S (III-YR).jpg" },
-    { name: "Benjamine 2nd yr", image: "images/coordinator/Benjamine 2nd yr.jpg" },
-    { name: "Gayathri V III-yr", image: "images/coordinator/Gayathri V III-yr.jpg" },
-    { name: "JAGADEESH B (II YR)", image: "images/coordinator/JAGADEESH B (II YR).jpg" },
-    { name: "K. Vasanth", image: "images/coordinator/K. Vasanth.jpg" },
-    { name: "Mathan 2nd year", image: "images/coordinator/Mathan 2nd year.jpg" },
-    { name: "MOHANAPRIYA M (III Year)", image: "images/coordinator/MOHANAPRIYA M (III Year).jpg" },
-    { name: "Priyanga S (III - year)", image: "images/coordinator/Priyanga S (III - year).jpg" },
-    { name: "Rithik TS", image: "images/coordinator/rithik.jpg" },
-    { name: "S S Daarmick", image: "images/coordinator/S S Daarmick.jpg" },
-    { name: "Sanjay Kumar E (final year)", image: "images/coordinator/Sanjay Kumar E (final year).jpg" },
-    { name: "Sanjay.M", image: "images/coordinator/Sanjay.m.JPG" },
-    { name: "Sriharini (final year)", image: "images/coordinator/Sriharini (Final Year).png" },
-    { name: "Thanigai Raj  S (final year)", image: "images/coordinator/Thanigai Raj  S.jpg" },
-    { name: "Vasanthan.m", image: "images/coordinator/Vasanthan.m.jpg" },
-    { name: "Bharath", image: "images/coordinator/❖𝙱 𝙷 𝙰 𝚁 𝙰 𝚃 𝙷 (2007).jpg" }
-  ];
-  
   const secretaries = [
-    { name: "", role: "Dept secretary", image: "images/coordinator/S S Dmick.jpg" },
     { name: "Giridharan R(Final year)", role: "Dept secretary", image: "images/coordinator/Giridharan R(Final year).jpg" },
     { name: "ABDUL KAREEM M(III-YR)", role: "Dept joint secretary", image: "images/coordinator/ABDUL KAREEM M(III-YR).jpg" },
+    { name: "VENANSHIYA P(4-YR)", role: "Dept secretary", image: "images/coordinator/VENANSHIYA P(4-YR).jpg" },
     { name: "DEEKSHIDHA KR", role: "Dept joint secretary", image: "images/coordinator/DEEKSHIDHA KR.jpg" }
   ];
   
   // Helper: create cards
-  function createCards(arr, stripId, ringColor, type='coordinator') {
+  function createCards(arr, stripId, ringColor, type='secretary') {
     const strip = document.getElementById(stripId);
     strip.innerHTML = '';
     const wrapper = document.createElement('div');
@@ -690,80 +687,12 @@
     strip.appendChild(wrapper.cloneNode(true));
   
     // ⚡ Faster scrolling (reduced duration)
-    const animationDuration = 4 + arr.length * 1; // was slower before
+    const animationDuration = 4 + arr.length * 1;
     strip.style.animation = `marquee ${animationDuration}s linear infinite`;
-  }
-  
-  // Disabled pause on hover/touch → keep moving always
-  function setupMarquee(showcaseId, stripId) {
-    // intentionally left empty
-  }
-  
-  // Chunk array into multiple rows
-  function chunkArray(arr, size) {
-    const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
-    return result;
-  }
-  
-  // Create coordinator rows with improved structure
-  function createCoordinatorRows(arr, parentId, ringColor) {
-    const parent = document.getElementById(parentId);
-    parent.innerHTML = '';
-    const rows = chunkArray(arr, 7); // 7 per row
-
-    rows.forEach((rowArr, rowIndex) => {
-      // Create container for each row with proper gradients
-      const container = document.createElement('div');
-      container.className = 'coordinator-strip-container';
-      
-      const strip = document.createElement('div');
-      strip.id = `coordinator-strip-${rowIndex}`;
-      strip.className = 'strip flex gap-4 sm:gap-8 will-change-transform';
-      container.appendChild(strip);
-      
-      parent.appendChild(container);
-      
-      // Create the cards for this row
-      const wrapper = document.createElement('div');
-      wrapper.className = 'flex gap-4 sm:gap-8 shrink-0';
-
-      rowArr.forEach((person, index) => {
-        const figure = document.createElement('figure');
-        figure.className = `group relative w-32 h-44 sm:w-40 sm:h-56 md:w-[18rem] md:h-[24rem] shrink-0 rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-800 ring-2 ${ringColor} transition-all duration-500 ease-out hover:z-10 tilt`;
-        figure.style.animation = `floaty ${6 + index % 2}s ease-in-out infinite, glowPulse 3s ease-in-out infinite`;
-
-        const img = document.createElement('img');
-        img.src = person.image;
-        img.alt = person.name;
-        img.className = "h-full w-full object-cover transition-transform duration-500 group-hover:scale-125";
-        figure.appendChild(img);
-
-        const caption = document.createElement('figcaption');
-        caption.className = "absolute bottom-0 left-0 w-full bg-black/60 text-white text-center py-1 sm:py-2 font-bold text-sm sm:text-base";
-        caption.textContent = person.name;
-        figure.appendChild(caption);
-        
-        wrapper.appendChild(figure);
-      });
-
-      // Duplicate for seamless animation
-      strip.appendChild(wrapper.cloneNode(true));
-      strip.appendChild(wrapper.cloneNode(true));
-
-      // Alternate rows reverse direction
-      const animationDuration = 4 + rowArr.length * 1;
-      strip.style.animation = `marquee ${animationDuration}s linear infinite`;
-      if (rowIndex % 2 !== 0) strip.style.animationDirection = 'reverse';
-    });
   }
   
   // Initialize
   createCards(secretaries, 'secretary-strip', 'ring-teal-400', 'secretary');
-  setupMarquee('secretary-showcase', 'secretary-strip');
-  createCoordinatorRows(coordinators, 'coordinator-rows', 'ring-pink-600');
 </script>
   
 <!-- CONTACT SECTION -->
